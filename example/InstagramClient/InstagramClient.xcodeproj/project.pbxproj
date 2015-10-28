@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D6ADDF61BE13142002B55E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D6ADDF51BE13142002B55E2 /* Main.storyboard */; };
 		66669A7C15AE9E200028E882 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66669A7B15AE9E200028E882 /* UIKit.framework */; };
 		66669A7E15AE9E200028E882 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66669A7D15AE9E200028E882 /* Foundation.framework */; };
 		66669A8015AE9E200028E882 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66669A7F15AE9E200028E882 /* CoreGraphics.framework */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D6ADDF51BE13142002B55E2 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		66669A7715AE9E200028E882 /* InstagramClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66669A7B15AE9E200028E882 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		66669A7D15AE9E200028E882 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -93,6 +95,7 @@
 				66669AC415AEA4BF0028E882 /* IGListViewController.h */,
 				66669AC515AEA4BF0028E882 /* IGListViewController.m */,
 				66669A8215AE9E200028E882 /* Supporting Files */,
+				0D6ADDF51BE13142002B55E2 /* Main.storyboard */,
 			);
 			path = InstagramClient;
 			sourceTree = "<group>";
@@ -174,6 +177,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				66669A8615AE9E200028E882 /* InfoPlist.strings in Resources */,
+				0D6ADDF61BE13142002B55E2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,7 +262,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "InstagramClient/InstagramClient-Prefix.pch";
 				INFOPLIST_FILE = "InstagramClient/InstagramClient-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -270,7 +274,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "InstagramClient/InstagramClient-Prefix.pch";
 				INFOPLIST_FILE = "InstagramClient/InstagramClient-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

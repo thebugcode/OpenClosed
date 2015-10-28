@@ -15,59 +15,29 @@
 
 @end
 
+#define APP_ID @"fd725621c5e44198a5b8ad3f7a0ffa09"
+
 @implementation IGViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-    self.view.backgroundColor = [UIColor whiteColor];
-    
-    UIButton* loginButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [loginButton setTitle:@"Login" forState:UIControlStateNormal];
-    [loginButton sizeToFit];
-    loginButton.center = CGPointMake(160, 200);
-    [loginButton addTarget:self 
-                    action:@selector(login) 
-          forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:loginButton];
-    
+    [super viewDidLoad];   
     
     IGAppDelegate* appDelegate = (IGAppDelegate*)[UIApplication sharedApplication].delegate;
-    
-    // here i can set accessToken received on previous login 
-    appDelegate.instagram.accessToken = [[NSUserDefaults standardUserDefaults] objectForKey:@"accessToken"];
+    appDelegate.instagram = [[Instagram alloc] initWithClientId:APP_ID
+                                                       delegate:nil];
     appDelegate.instagram.sessionDelegate = self;
-    if ([appDelegate.instagram isSessionValid]) {
-        IGListViewController* viewController = [[IGListViewController alloc] init];
-        [self.navigationController pushViewController:viewController animated:YES];
-    } else {
-        [appDelegate.instagram authorize:[NSArray arrayWithObjects:@"comments", @"likes", nil]];
-    }
 }
 
-- (void)viewDidUnload {
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
-}
-
--(void)login {
+- (IBAction)login:(id)sender {
     IGAppDelegate* appDelegate = (IGAppDelegate*)[UIApplication sharedApplication].delegate;
     [appDelegate.instagram authorize:[NSArray arrayWithObjects:@"comments", @"likes", nil]];
 }
 
+
+
 #pragma - IGSessionDelegate
 
 -(void)igDidLogin {
-    NSLog(@"Instagram did login");
-    // here i can store accessToken
-    IGAppDelegate* appDelegate = (IGAppDelegate*)[UIApplication sharedApplication].delegate;
-    [[NSUserDefaults standardUserDefaults] setObject:appDelegate.instagram.accessToken forKey:@"accessToken"];
-	[[NSUserDefaults standardUserDefaults] synchronize];
-    
     IGListViewController* viewController = [[IGListViewController alloc] init];
     [self.navigationController pushViewController:viewController animated:YES];
 }
@@ -88,15 +58,6 @@
     [alertView show];
 }
 
--(void)igDidLogout {
-    NSLog(@"Instagram did logout");
-    // remove the accessToken
-    [[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"accessToken"];
-	[[NSUserDefaults standardUserDefaults] synchronize];
-}
 
--(void)igSessionInvalidated {
-    NSLog(@"Instagram session was invalidated");
-}
 
 @end
