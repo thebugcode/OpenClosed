@@ -9,6 +9,8 @@
 #import "IGAppDelegate.h"
 
 #import "IGViewController.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+
 
 #define APP_ID @"fd725621c5e44198a5b8ad3f7a0ffa09"
 
@@ -19,6 +21,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [[FBSDKApplicationDelegate sharedInstance] application:application
+                             didFinishLaunchingWithOptions:launchOptions];
     return YES;
 }
 
@@ -27,8 +31,16 @@
     return [self.instagram handleOpenURL:url]; 
 }
 
+
 -(BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
-    return [self.instagram handleOpenURL:url];    
+    if ( [self.instagram handleOpenURL:url]) return YES;
+    if ( [[FBSDKApplicationDelegate sharedInstance] application:application
+                                                        openURL:url
+                                              sourceApplication:sourceApplication
+                                                     annotation:annotation
+          ]) return YES;
+    
+    return NO;
 }
 
 @end

@@ -25,11 +25,21 @@
                                     <action selector="login:" destination="ILa-0s-OkM" eventType="touchUpInside" id="78f-IO-MfO"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5dB-R2-YXs">
+                                <rect key="frame" x="228" y="330" width="144" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Login With Facebook"/>
+                                <connections>
+                                    <action selector="loginWithFacebook:" destination="ILa-0s-OkM" eventType="touchUpInside" id="bTo-pv-M9M"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="5dB-R2-YXs" firstAttribute="top" secondItem="MUr-dE-zv1" secondAttribute="bottom" constant="15" id="6ek-HL-L7q"/>
                             <constraint firstItem="MUr-dE-zv1" firstAttribute="centerY" secondItem="Per-z3-26g" secondAttribute="centerY" id="AIN-4a-H4K"/>
+                            <constraint firstItem="5dB-R2-YXs" firstAttribute="centerX" secondItem="MUr-dE-zv1" secondAttribute="centerX" id="af2-nd-oAV"/>
                             <constraint firstItem="MUr-dE-zv1" firstAttribute="centerX" secondItem="Per-z3-26g" secondAttribute="centerX" id="sUx-Gl-YzD"/>
                         </constraints>
                     </view>

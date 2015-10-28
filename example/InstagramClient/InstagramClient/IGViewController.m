@@ -10,6 +10,8 @@
 
 #import "IGAppDelegate.h"
 #import "IGListViewController.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
 
 @interface IGViewController ()
 
@@ -28,11 +30,33 @@
     appDelegate.instagram.sessionDelegate = self;
 }
 
+
 - (IBAction)login:(id)sender {
     IGAppDelegate* appDelegate = (IGAppDelegate*)[UIApplication sharedApplication].delegate;
     [appDelegate.instagram authorize:[NSArray arrayWithObjects:@"comments", @"likes", nil]];
 }
 
+
+- (IBAction)loginWithFacebook:(id)sender {
+    FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
+    [login logInWithReadPermissions: @[@"public_profile"]
+                 fromViewController:self
+                            handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
+                                if (error) {
+                                    NSLog(@"Process error");
+                                } else if (result.isCancelled) {
+                                    NSLog(@"Cancelled");
+                                } else {
+                                    if ([FBSDKAccessToken currentAccessToken]) {
+                                        [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:nil]
+                                         startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
+                                             if (!error) {
+                                                 NSLog(@"fetched user:%@", result);
+                                             }
+                                         }];
+                                    }                                }
+                            }];
+}
 
 
 #pragma - IGSessionDelegate
@@ -41,23 +65,5 @@
     IGListViewController* viewController = [[IGListViewController alloc] init];
     [self.navigationController pushViewController:viewController animated:YES];
 }
-
--(void)igDidNotLogin:(BOOL)cancelled {
-    NSLog(@"Instagram did not login");
-    NSString* message = nil;
-    if (cancelled) {
-        message = @"Access cancelled!";
-    } else {
-        message = @"Access denied!";
-    }
-    UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"Error"
-                                                        message:message
-                                                       delegate:nil
-                                              cancelButtonTitle:@"Ok"
-                                              otherButtonTitles:nil];
-    [alertView show];
-}
-
-
 
 @end

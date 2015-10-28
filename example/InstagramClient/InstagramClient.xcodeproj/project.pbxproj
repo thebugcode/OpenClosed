@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0D6ADDF61BE13142002B55E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D6ADDF51BE13142002B55E2 /* Main.storyboard */; };
+		0D6ADE7F1BE17EE7002B55E2 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D6ADE7E1BE17EE7002B55E2 /* FBSDKCoreKit.framework */; };
+		0D6ADE811BE186EA002B55E2 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D6ADE801BE186EA002B55E2 /* FBSDKLoginKit.framework */; };
 		66669A7C15AE9E200028E882 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66669A7B15AE9E200028E882 /* UIKit.framework */; };
 		66669A7E15AE9E200028E882 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66669A7D15AE9E200028E882 /* Foundation.framework */; };
 		66669A8015AE9E200028E882 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66669A7F15AE9E200028E882 /* CoreGraphics.framework */; };
@@ -22,6 +24,8 @@
 
 /* Begin PBXFileReference section */
 		0D6ADDF51BE13142002B55E2 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		0D6ADE7E1BE17EE7002B55E2 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		0D6ADE801BE186EA002B55E2 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		66669A7715AE9E200028E882 /* InstagramClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66669A7B15AE9E200028E882 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		66669A7D15AE9E200028E882 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -49,6 +53,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				66669A7C15AE9E200028E882 /* UIKit.framework in Frameworks */,
+				0D6ADE7F1BE17EE7002B55E2 /* FBSDKCoreKit.framework in Frameworks */,
+				0D6ADE811BE186EA002B55E2 /* FBSDKLoginKit.framework in Frameworks */,
 				66669A7E15AE9E200028E882 /* Foundation.framework in Frameworks */,
 				66669A8015AE9E200028E882 /* CoreGraphics.framework in Frameworks */,
 			);
@@ -78,6 +84,8 @@
 		66669A7A15AE9E200028E882 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0D6ADE801BE186EA002B55E2 /* FBSDKLoginKit.framework */,
+				0D6ADE7E1BE17EE7002B55E2 /* FBSDKCoreKit.framework */,
 				66669A7B15AE9E200028E882 /* UIKit.framework */,
 				66669A7D15AE9E200028E882 /* Foundation.framework */,
 				66669A7F15AE9E200028E882 /* CoreGraphics.framework */,
@@ -259,6 +267,10 @@
 		66669A9615AE9E200028E882 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "InstagramClient/InstagramClient-Prefix.pch";
 				INFOPLIST_FILE = "InstagramClient/InstagramClient-Info.plist";
@@ -271,6 +283,10 @@
 		66669A9715AE9E200028E882 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "InstagramClient/InstagramClient-Prefix.pch";
 				INFOPLIST_FILE = "InstagramClient/InstagramClient-Info.plist";
