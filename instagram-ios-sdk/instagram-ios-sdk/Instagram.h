@@ -34,6 +34,8 @@
                             params:(NSMutableDictionary*)params
                         httpMethod:(NSString*)httpMethod
                           delegate:(id<IGRequestDelegate>)delegate;
++ (void)setSharedInstance:(Instagram *)object;
++ (Instagram *)sharedInstance;
 
 @end
 

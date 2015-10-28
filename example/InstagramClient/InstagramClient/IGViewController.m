@@ -2,62 +2,41 @@
 //  IGViewController.m
 //  InstagramClient
 //
-//  Created by Cristiano Severini on 12/07/12.
-//  Copyright (c) 2012 Crino. All rights reserved.
+//  Created by Dan Ursu on 29/10/2012
+//  Copyright (c) 2012 Dursu. All rights reserved.
 //
 
 #import "IGViewController.h"
-
-#import "IGAppDelegate.h"
 #import "IGListViewController.h"
-#import <FBSDKCoreKit/FBSDKCoreKit.h>
-#import <FBSDKLoginKit/FBSDKLoginKit.h>
 
-@interface IGViewController ()
-
+@interface IGViewController() <AuthenticationDelegate>
 @end
-
-#define APP_ID @"fd725621c5e44198a5b8ad3f7a0ffa09"
 
 @implementation IGViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];   
-    
-    IGAppDelegate* appDelegate = (IGAppDelegate*)[UIApplication sharedApplication].delegate;
-    appDelegate.instagram = [[Instagram alloc] initWithClientId:APP_ID
-                                                       delegate:nil];
-    appDelegate.instagram.sessionDelegate = self;
-}
-
-
 - (IBAction)login:(id)sender {
-    IGAppDelegate* appDelegate = (IGAppDelegate*)[UIApplication sharedApplication].delegate;
-    [appDelegate.instagram authorize:[NSArray arrayWithObjects:@"comments", @"likes", nil]];
+    [self performLogin];
 }
 
 - (IBAction)loginWithFacebook:(id)sender {
-    FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
-    [login logInWithReadPermissions: @[@"public_profile"]
-                 fromViewController:self
-                            handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
-                                if (error) {
-                                    NSLog(@"Process error");
-                                } else if (result.isCancelled) {
-                                    NSLog(@"Cancelled");
-                                } else {
-                                    NSLog(@"Logged in");
-                                }
-                            }];
+    [self performLogin];
+}
+
+- (void)performLogin {
+    [self.authenticator setDelegate:self];
+    [self.authenticator login];
 }
 
 
-
-#pragma - IGSessionDelegate
-
--(void)igDidLogin {
+#pragma - AuthenticationDelegate
+- (void)authenticationDidSucceedWithUserName:(NSString *)username {
     IGListViewController* viewController = [[IGListViewController alloc] init];
     [self.navigationController pushViewController:viewController animated:YES];
 }
+
+- (void)authenticationDidFail {
+    NSLog(@"Error");
+}
+
 
 @end

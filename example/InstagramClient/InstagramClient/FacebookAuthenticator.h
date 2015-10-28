@@ -9,6 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "Authentication.h"
 
-@interface FacebookAuthenticator : NSObject <Authentication>
+@interface FacebookAuthenticator : NSObject <Authenticator>
 
 @end

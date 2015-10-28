@@ -10,9 +10,8 @@
 
 #import "IGViewController.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
-
-
-#define APP_ID @"fd725621c5e44198a5b8ad3f7a0ffa09"
+#import "FacebookAuthenticator.h"
+#import "InstagramAuthenticator.h"
 
 @implementation IGAppDelegate
 
@@ -23,9 +22,18 @@
 {
     [[FBSDKApplicationDelegate sharedInstance] application:application
                              didFinishLaunchingWithOptions:launchOptions];
+    IGViewController *topVC = [self visibleViewController];
+    topVC.authenticator = [[FacebookAuthenticator alloc] init];
+    
     return YES;
 }
 
+
+- (IGViewController *)visibleViewController {
+    UINavigationController *navController = (UINavigationController *)self.window.rootViewController;
+    
+    return (IGViewController *)[navController topViewController];
+}
 // YOU NEED TO CAPTURE igAPPID:// schema
 -(BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
     return [self.instagram handleOpenURL:url]; 

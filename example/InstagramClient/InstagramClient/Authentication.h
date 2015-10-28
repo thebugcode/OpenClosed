@@ -14,7 +14,7 @@
 @end
 
 
-@protocol Authentication <NSObject>
+@protocol Authenticator <NSObject>
 - (void)login;
 - (void)setDelegate:(id<AuthenticationDelegate>)delegate;
 @end

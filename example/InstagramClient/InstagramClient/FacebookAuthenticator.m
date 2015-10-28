@@ -7,6 +7,8 @@
 //
 
 #import "FacebookAuthenticator.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
 
 @interface FacebookAuthenticator()
 @property (weak, nonatomic) id<AuthenticationDelegate> delegate;
@@ -15,12 +17,24 @@
 @implementation FacebookAuthenticator
 
 - (void)login {
-    
+    FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
+    [login logInWithReadPermissions: @[@"public_profile"]
+                 fromViewController:nil
+                            handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
+                                if (error) {
+                                    [self.delegate authenticationDidFail];
+                                } else if (result.isCancelled) {
+                                    [self.delegate authenticationDidFail];
+                                } else {
+                                    NSLog(@"Logged in");
+                                }
+                            }];
+
 }
 
 
 - (void)setDelegate:(id<AuthenticationDelegate>)delegate {
-    self.delegate = delegate;
+    _delegate = delegate;
 }
 
 

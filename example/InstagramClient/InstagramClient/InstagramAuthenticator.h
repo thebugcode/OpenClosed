@@ -9,6 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "Authentication.h"
 
-@interface InstagramAuthenticator : NSObject <Authentication>
+@interface InstagramAuthenticator : NSObject <Authenticator>
 
 @end

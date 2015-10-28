@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Authentication.h"
 
-@interface IGViewController : UIViewController <IGSessionDelegate>
+@interface IGViewController : UIViewController 
+@property (strong, nonatomic) id<Authenticator> authenticator;
 
 @end
