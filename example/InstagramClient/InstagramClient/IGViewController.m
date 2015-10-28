@@ -36,7 +36,6 @@
     [appDelegate.instagram authorize:[NSArray arrayWithObjects:@"comments", @"likes", nil]];
 }
 
-
 - (IBAction)loginWithFacebook:(id)sender {
     FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
     [login logInWithReadPermissions: @[@"public_profile"]
@@ -47,16 +46,11 @@
                                 } else if (result.isCancelled) {
                                     NSLog(@"Cancelled");
                                 } else {
-                                    if ([FBSDKAccessToken currentAccessToken]) {
-                                        [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:nil]
-                                         startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
-                                             if (!error) {
-                                                 NSLog(@"fetched user:%@", result);
-                                             }
-                                         }];
-                                    }                                }
+                                    NSLog(@"Logged in");
+                                }
                             }];
 }
+
 
 
 #pragma - IGSessionDelegate

@@ -10,6 +10,8 @@
 		0D6ADDF61BE13142002B55E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D6ADDF51BE13142002B55E2 /* Main.storyboard */; };
 		0D6ADE7F1BE17EE7002B55E2 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D6ADE7E1BE17EE7002B55E2 /* FBSDKCoreKit.framework */; };
 		0D6ADE811BE186EA002B55E2 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D6ADE801BE186EA002B55E2 /* FBSDKLoginKit.framework */; };
+		0D6ADE851BE18F43002B55E2 /* FacebookAuthenticator.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D6ADE841BE18F43002B55E2 /* FacebookAuthenticator.m */; };
+		0D6ADE881BE18F54002B55E2 /* InstagramAuthenticator.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D6ADE871BE18F54002B55E2 /* InstagramAuthenticator.m */; };
 		66669A7C15AE9E200028E882 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66669A7B15AE9E200028E882 /* UIKit.framework */; };
 		66669A7E15AE9E200028E882 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66669A7D15AE9E200028E882 /* Foundation.framework */; };
 		66669A8015AE9E200028E882 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66669A7F15AE9E200028E882 /* CoreGraphics.framework */; };
@@ -26,6 +28,11 @@
 		0D6ADDF51BE13142002B55E2 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		0D6ADE7E1BE17EE7002B55E2 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		0D6ADE801BE186EA002B55E2 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		0D6ADE821BE18E06002B55E2 /* Authentication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Authentication.h; sourceTree = "<group>"; };
+		0D6ADE831BE18F43002B55E2 /* FacebookAuthenticator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookAuthenticator.h; sourceTree = "<group>"; };
+		0D6ADE841BE18F43002B55E2 /* FacebookAuthenticator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookAuthenticator.m; sourceTree = "<group>"; };
+		0D6ADE861BE18F54002B55E2 /* InstagramAuthenticator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstagramAuthenticator.h; sourceTree = "<group>"; };
+		0D6ADE871BE18F54002B55E2 /* InstagramAuthenticator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstagramAuthenticator.m; sourceTree = "<group>"; };
 		66669A7715AE9E200028E882 /* InstagramClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66669A7B15AE9E200028E882 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		66669A7D15AE9E200028E882 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -96,6 +103,11 @@
 		66669A8115AE9E200028E882 /* InstagramClient */ = {
 			isa = PBXGroup;
 			children = (
+				0D6ADE821BE18E06002B55E2 /* Authentication.h */,
+				0D6ADE831BE18F43002B55E2 /* FacebookAuthenticator.h */,
+				0D6ADE841BE18F43002B55E2 /* FacebookAuthenticator.m */,
+				0D6ADE861BE18F54002B55E2 /* InstagramAuthenticator.h */,
+				0D6ADE871BE18F54002B55E2 /* InstagramAuthenticator.m */,
 				66669A8A15AE9E200028E882 /* IGAppDelegate.h */,
 				66669A8B15AE9E200028E882 /* IGAppDelegate.m */,
 				66669A8D15AE9E200028E882 /* IGViewController.h */,
@@ -200,6 +212,8 @@
 				66669A8C15AE9E200028E882 /* IGAppDelegate.m in Sources */,
 				66669A8F15AE9E200028E882 /* IGViewController.m in Sources */,
 				66669AB815AEA01A0028E882 /* IGRequest.m in Sources */,
+				0D6ADE881BE18F54002B55E2 /* InstagramAuthenticator.m in Sources */,
+				0D6ADE851BE18F43002B55E2 /* FacebookAuthenticator.m in Sources */,
 				66669AB915AEA01A0028E882 /* Instagram.m in Sources */,
 				66669AC615AEA4BF0028E882 /* IGListViewController.m in Sources */,
 			);
