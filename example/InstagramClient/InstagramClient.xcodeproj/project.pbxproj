@@ -12,6 +12,7 @@
 		0D6ADE811BE186EA002B55E2 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D6ADE801BE186EA002B55E2 /* FBSDKLoginKit.framework */; };
 		0D6ADE851BE18F43002B55E2 /* FacebookAuthenticator.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D6ADE841BE18F43002B55E2 /* FacebookAuthenticator.m */; };
 		0D6ADE881BE18F54002B55E2 /* InstagramAuthenticator.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D6ADE871BE18F54002B55E2 /* InstagramAuthenticator.m */; };
+		0D6ADE941BE19DE6002B55E2 /* RandomAuthenticator.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D6ADE931BE19DE6002B55E2 /* RandomAuthenticator.m */; };
 		66669A7C15AE9E200028E882 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66669A7B15AE9E200028E882 /* UIKit.framework */; };
 		66669A7E15AE9E200028E882 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66669A7D15AE9E200028E882 /* Foundation.framework */; };
 		66669A8015AE9E200028E882 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66669A7F15AE9E200028E882 /* CoreGraphics.framework */; };
@@ -33,6 +34,8 @@
 		0D6ADE841BE18F43002B55E2 /* FacebookAuthenticator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookAuthenticator.m; sourceTree = "<group>"; };
 		0D6ADE861BE18F54002B55E2 /* InstagramAuthenticator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstagramAuthenticator.h; sourceTree = "<group>"; };
 		0D6ADE871BE18F54002B55E2 /* InstagramAuthenticator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstagramAuthenticator.m; sourceTree = "<group>"; };
+		0D6ADE921BE19DE6002B55E2 /* RandomAuthenticator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RandomAuthenticator.h; sourceTree = "<group>"; };
+		0D6ADE931BE19DE6002B55E2 /* RandomAuthenticator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RandomAuthenticator.m; sourceTree = "<group>"; };
 		66669A7715AE9E200028E882 /* InstagramClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66669A7B15AE9E200028E882 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		66669A7D15AE9E200028E882 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -108,6 +111,8 @@
 				0D6ADE841BE18F43002B55E2 /* FacebookAuthenticator.m */,
 				0D6ADE861BE18F54002B55E2 /* InstagramAuthenticator.h */,
 				0D6ADE871BE18F54002B55E2 /* InstagramAuthenticator.m */,
+				0D6ADE921BE19DE6002B55E2 /* RandomAuthenticator.h */,
+				0D6ADE931BE19DE6002B55E2 /* RandomAuthenticator.m */,
 				66669A8A15AE9E200028E882 /* IGAppDelegate.h */,
 				66669A8B15AE9E200028E882 /* IGAppDelegate.m */,
 				66669A8D15AE9E200028E882 /* IGViewController.h */,
@@ -214,6 +219,7 @@
 				66669AB815AEA01A0028E882 /* IGRequest.m in Sources */,
 				0D6ADE881BE18F54002B55E2 /* InstagramAuthenticator.m in Sources */,
 				0D6ADE851BE18F43002B55E2 /* FacebookAuthenticator.m in Sources */,
+				0D6ADE941BE19DE6002B55E2 /* RandomAuthenticator.m in Sources */,
 				66669AB915AEA01A0028E882 /* Instagram.m in Sources */,
 				66669AC615AEA4BF0028E882 /* IGListViewController.m in Sources */,
 			);
